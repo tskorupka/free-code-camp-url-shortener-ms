@@ -14,7 +14,7 @@ app.use(express.static('public'));
 app.get('/new/*', function (req, res) {
     res.setHeader('Content-Type', 'application/json');
     
-    var url = req.url.match(/\/new\/(.+)([?]allow=true)/)[1];
+    var url = req.url.match(/\/new\/(.+)([?]allow=true)?/)[1];
     var urls = req.db.get('urls');
     var absoluteUrl = req.headers['x-forwarded-proto'] + "://" + req.headers.host + "/";
     
