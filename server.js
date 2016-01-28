@@ -2,7 +2,7 @@ var express = require("express");
 var request = require("request");
 var monk = require("monk");
 var app = express();
-var db = monk('localhost:27017/fccurls');
+var db = monk('mongodb://username:password@ds039261.mongolab.com:39261/heroku_qbhgwl37');
 
 app.use(function (req, res, next) {
   req.db = db;
